@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مليونير كرة القدم - Football Millionaire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Screen: Start / Login -->
+    <header class="header">
+      <h1>🏆 مليونير كرة القدم</h1>
+      <p class="subtitle">اختبر معلوماتك الكروية واصل إلى الجائزة الكبرى!</p>
+    </header>
+
+    <div id="auth-screen" class="card">
+      <h2>تسجيل الدخول للبدء</h2>
+      <div class="input-group">
+        <label for="username">اسم اللاعب:</label>
+        <input type="text" id="username" placeholder="اكتب اسمك هنا...">
+      </div>
+      <div class="actions">
+        <button id="btn-login" class="btn btn-primary">دخول وبدء اللعب</button>
+        <button id="btn-guest" class="btn btn-secondary">اللعب كزائر (Guest)</button>
+      </div>
+    </div>
+
+    <!-- Screen: Game -->
+    <div id="game-screen" class="card hidden">
+      <div class="game-top-bar">
+        <div class="player-info">اللاعب: <span id="display-name">زائر</span></div>
+        <div class="level-info">المستوى: <span id="current-level">1</span> / 15</div>
+        <div class="timer">الوقت: <span id="timer-count">30</span> ث</div>
+      </div>
+
+      <!-- Lifelines -->
+      <div class="lifelines">
+        <button id="ll-fifty" class="btn-lifeline" title="حذف إجابتين">50:50</button>
+        <button id="ll-audience" class="btn-lifeline" title="رأي الجمهور">👥 الجمهور</button>
+        <button id="ll-skip" class="btn-lifeline" title="تخطي السؤال">⏭️ تخطي</button>
+      </div>
+
+      <div class="question-box">
+        <h3 id="question-text">جاري تحميل السؤال...</h3>
+      </div>
+
+      <div class="options-grid" id="options-container">
+        <!-- Option buttons dynamically generated -->
+      </div>
+
+      <div class="prize-ladder-bar">
+        <span>الجائزة الحالية: <strong id="current-prize">0</strong> نقطة</span>
+      </div>
+    </div>
+
+    <!-- Screen: Result -->
+    <div id="result-screen" class="card hidden">
+      <h2 id="result-title">انتهت اللعبة!</h2>
+      <p id="result-message"></p>
+      <div class="final-score">الرصيد النهائي: <span id="final-prize">0</span> نقطة</div>
+      <button id="btn-restart" class="btn btn-primary">لعب مرة أخرى</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
